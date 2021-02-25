@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class RandomExpensioner implements Source{
     @Override
-    public int getExpense() {
+    public int getExpense(int id) {
         return new Random().nextInt(ExampleStorage.MAXIMUM_EXTENSE);
     }
 }

@@ -18,6 +18,12 @@ public class ComplexConsumer implements WaterUser {
     }
 
     @Override
+    public void replaceSource(Source source){
+        for (WaterUser consumer : subConsumers){
+            consumer.replaceSource(source);
+        }
+    }
+    @Override
     public int getExpense() {
         updateExpense();
         return summaryExpense;

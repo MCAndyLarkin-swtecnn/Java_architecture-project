@@ -6,4 +6,6 @@ public interface WaterUser {                                                    
     void updateExpense();
 
     String getName();
+
+    void replaceSource(Source source);
 }

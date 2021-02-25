@@ -1,5 +1,5 @@
 package watersupply.consumers;
 
-public interface Source {
-    int getExpense();
+public interface Source {//Protocol of data mining
+    int getExpense(int id);
 }
