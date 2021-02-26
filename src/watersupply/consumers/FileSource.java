@@ -15,8 +15,9 @@ public class FileSource implements Source{
     private File file;
     private boolean available = false;
 
-    public FileSource(File file) throws IOException, ParserConfigurationException, SAXException { //I dont foolow Exception^ becuse exception MUST be throwed.
-                                                    // Excertion save program
+    public FileSource(File file) throws IOException, ParserConfigurationException, SAXException {
+                                                    //I dont foolow Exception^ becuse exception MUST be throwed.
+                                                    // Excertion save program behavior
             this.file = file;
             parse(file);
     }

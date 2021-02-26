@@ -3,6 +3,8 @@ import static watersupply.ExampleStorage.*;
 
 import org.xml.sax.SAXException;
 import watersupply.consumers.*;
+import watersupply.management.FrequencePump;
+import watersupply.management.FrequencePumpManager;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
@@ -12,8 +14,12 @@ import java.util.List;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {   //Exception is here because customer should
-                                                                    // care adout source-file existing
+    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
+                                                                    //Exception is here because customer should
+                                                                    // care adout source-file existing and
+                                                                            // current score existing
+
+        new FrequencePump(new File("PumpPasport.json"));
 
         Source fileSource = new FileSource(new File("ExpenseData.json"));
         Source randomExpensioner = new RandomExpensioner();

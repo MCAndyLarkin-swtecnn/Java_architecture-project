@@ -1,7 +1,7 @@
 package watersupply.consumers;
 
 public interface WaterUser {                                                                                            //Why Componovshik?
-    int getExpense();
+    int getExpense();//depression
 
     void updateExpense();
 

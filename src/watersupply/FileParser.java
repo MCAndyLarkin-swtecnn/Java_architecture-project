@@ -39,9 +39,9 @@ public abstract class FileParser {
 
     public static void jsonParser(File file) throws IOException {
         Gson gson = new Gson();                             ///External!!
-            Reader jsonReader = new BufferedReader(new FileReader(file));
-            consumersScore = gson.fromJson(jsonReader, HashMap.class);
-            jsonReader.close();
+        Reader jsonReader = new BufferedReader(new FileReader(file));
+        consumersScore = gson.fromJson(jsonReader, HashMap.class);
+        jsonReader.close();
     }
     public static int findScore(int id) {
         return consumersScore.get(String.valueOf(id)).intValue();

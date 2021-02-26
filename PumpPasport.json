@@ -1,0 +1,46 @@
+{
+   "null" : {
+     "voltage" : 0.0,
+     "frequency" : 0
+   },
+   "1" : {
+     "voltage" : 110.5,
+     "frequency" : 5
+   },
+   "2" : {
+     "voltage" : 113.2,
+     "frequency" : 10
+   },
+   "3" : {
+     "voltage" : 117.0,
+     "frequency" : 15
+   },
+   "4" : {
+     "voltage" : 122.4,
+     "frequency" : 20
+   },
+   "5" : {
+     "voltage" : 126.8,
+     "frequency" : 25
+   },
+   "6" : {
+     "voltage" : 130.5,
+     "frequency" : 30
+   },
+   "7" : {
+     "voltage" : 135.0,
+     "frequency" : 35
+   },
+   "8" : {
+     "voltage" : 142.7,
+     "frequency" : 40
+   },
+   "9" : {
+     "voltage" : 153.1,
+     "frequency" : 45
+   },
+   "10" : {
+     "voltage" : 159.9,
+     "frequency" : 50
+   }
+}
