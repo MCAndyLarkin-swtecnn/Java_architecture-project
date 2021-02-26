@@ -1,5 +1,9 @@
 package watersupply.consumers;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+
 import static watersupply.ExampleStorage.*;
 import static watersupply.FileParser.*;
 
@@ -11,14 +15,13 @@ public class FileSource implements Source{
     private File file;
     private boolean available = false;
 
-    public FileSource(File file){
-        if(file.canRead()){
+    public FileSource(File file) throws IOException, ParserConfigurationException, SAXException { //I dont foolow Exception^ becuse exception MUST be throwed.
+                                                    // Excertion save program
             this.file = file;
             parse(file);
-        }
     }
     @Override
-    public int getExpense(int id) {
+    public int getExpense(int id){
         return findScore(id);
     }
 
