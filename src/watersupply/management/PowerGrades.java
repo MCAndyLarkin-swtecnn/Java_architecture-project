@@ -1,25 +1,23 @@
 package watersupply.management;
 
-import kotlin.ranges.CharRange;
-
-import java.util.List;
-
 public enum PowerGrades {
-    Null("null"),
-    Minimal("1"),
-    Very_Low("2"),
-    Low("3"),
-    Lower_of_middle("4"),
-    Average("5"),
-    Higher_of_middle("6"),
-    High("7"),
-    Very_High("8"),
-    Super_High("9"),
-    Maximal("10");
+    Null("null", 0),
+    Minimal("1",1),
+    Very_Low("2",2),
+    Low("3",4),
+    Lower_of_middle("4",8),
+    Average("5",16),
+    Higher_of_middle("6",32),
+    High("7",64),
+    Very_High("8",128),
+    Super_High("9",256),
+    Maximal("10",512);
     private String grade;
-    PowerGrades(String grade){
-        this.grade = grade;
+    private int powerfull;
+    PowerGrades(String grade, int powerful){
+        this.grade = grade;//index
+        this.powerfull = powerful;// liters/sec
     }
     String grade(){ return grade;}
-//    static findByGrade(String )
+    int powerful(){ return powerfull;}
 }

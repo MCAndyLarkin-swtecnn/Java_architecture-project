@@ -1,23 +1,30 @@
 package watersupply.consumers;
 
+
+import watersupply.Hardware_realization;
+import watersupply.odserver.Observer;
+
 import static watersupply.ExampleStorage.*;
 
-public class SingleCunsumer implements WaterUser{
-    private int id;//adress
+public class SingleCunsumer extends WaterUser{
     private Source source;
-    private int expense = 0;
-    private final String name;
 
     public SingleCunsumer(Source source, int id){
-        name = String.valueOf(hashCode());
+        super("", id);
         this.source = source;
-        this.id = id;
     }
     public SingleCunsumer(String name, Source source, int id){
+        super(name, id);
         this.source = source;
-        this.name = name;
-        this.id = id;
     }
+
+    @Hardware_realization
+    public void changeExpense(){
+        writeDebug("Single consumer - "+name, "Expense was changed");
+        //Method must react to source.expense change
+        notifySubscribers();
+    }
+
     @Override
     public void replaceSource(Source source){
         this.source = source;
@@ -32,10 +39,12 @@ public class SingleCunsumer implements WaterUser{
     public void updateExpense(){
         expense = source.getExpense(id);
 
-        writeDebug("Generated expense/"+name, String.valueOf(expense));
+        writeDebug("Generated expense/"+getName(), String.valueOf(expense));
     }
     @Override
     public String getName() {
+        if (name.equals(""))
+            name = String.valueOf(hashCode());
         return name;
     }
 }

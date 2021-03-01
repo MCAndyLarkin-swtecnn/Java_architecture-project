@@ -1,11 +1,22 @@
 package watersupply.consumers;
 
-public interface WaterUser {                                                                                            //Why Componovshik?
-    int getExpense();//depression
+import watersupply.odserver.Observable;
 
-    void updateExpense();
+public abstract class WaterUser extends Observable {
+    protected int expense = 0;
+    protected String name;
+    protected final int id;//adress
 
-    String getName();
+    protected WaterUser(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
 
-    void replaceSource(Source source);
+    public abstract int getExpense();//depression
+
+    public abstract void updateExpense();
+
+    public abstract String getName();
+
+    public abstract void replaceSource(Source source);
 }

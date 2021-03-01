@@ -8,10 +8,9 @@ import static watersupply.ExampleStorage.*;
 import static watersupply.FileParser.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileSource implements Source{
+public class FileSource implements Source {
     private File file;
     private boolean available = false;
 
